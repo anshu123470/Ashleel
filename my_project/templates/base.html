@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashlel.hub</title>
+<!--    <link rel="icon" href="{% static 'images/icon.png'%}">-->
+  <!--    css link-->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+  <!--    icon link -->
+  <link href="{% static 'css/all.css' %}" rel="stylesheet" />
+  <meta name="description" content="Explore Ashleel Hub for a plethora of high-quality adult entertainment videos. Indulge in millions of free porn clips across various categories, including the popular XXX keyword. Dive into the best tube site experience on ashleel.hub.">
+    <meta name="keywords" content="ashleel hub, XXX, free porn videos, adult entertainment, tube site,porn,indian girl, hindi porn">
+<link rel="icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.rtumE3tSEKK6HqF3_Mjq1QAAAA?rs=1&pid=ImgDetMain">
+</head>
+<style>
+:root {
+      --bgcolor: linear-gradient(45deg, #1b5e20,);
+      --txtcolor: #18ffff;
+    }
+    .bg-color {
+      background: var(--bgcolor) !important;
+    }
+
+    .txt-color {
+      color: var(--txtcolor);
+    }
+    #menu{
+      background: transparent !important;
+      
+    }
+    #menu ul li a {
+      color: white;
+    }
+  #menu ul li a:hover
+    {
+      background: goldenrod;
+      
+      border-radius: 10px;
+      border: 2px solid black;
+
+    }
+    .footer p{
+      color: white;
+    }
+    .footer p a{
+      color: skyblue;
+      text-decoration: none;
+    }
+</style>
+<body>
+<div class="container-fluid">
+
+  <div class="row" style="background-color: #1b5e20;">
+    <div class="col-sm-12">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+  <div class="container-fluid">
+    <a class="navbar-brand text-info" href="/index">Ashlel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/index">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/index/photo/">Photo</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> -->
+       
+      </ul>
+      <form class="d-flex" role="search" method="get" action="/search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query">
+        <button class="btn btn-outline-info" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    </div>
+  </div>
+  
+
+</div>
+
+<!--  start childpage || middle page -->
+  <div class="row">
+    <div class="col-sm-12" style="min-height: 700px ; ">
+{% block childpage %}
+{% endblock %}
+    </div>
+</div>
+
+<div class="row footer text-center">
+  <div class="col-sm-12" style="background-color: #1b5e20;">
+    
+    <p>
+     &COPY; {% now "Y" %}
+      <a href="/home">ahlel.com</a>
+       
+    </p>
+    
+  </div>
+</div>
+
+
+<!--  end childpage || middle page-->
+
+  <!-- start js link-->
+  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>

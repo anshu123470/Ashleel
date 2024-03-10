@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+{% block childpage %}
+
+<head>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/v_c.css' %}">
+
+</head>
+
+<!--start video -->
+
+<div class="container">
+<div class="row">
+{% for i in ServicesData %}
+<div class="col-md-3 col-sm-6 mt-2">
+  <a href="/video/{{i.slug_v}}" style="text-decoration: none;">
+  <div class="card" style="width: 16rem;">
+    <video src="{{i.video.url}}"></video>
+    <div class="card-body cb">
+      <!-- <h5 class="card-title">Card title</h5> -->
+      <p class="card-text">{{i.titel}}</p>
+      
+    </div>
+  </div>
+</a>
+</div>
+          {%endfor %}
+    </div>
+    </div>
+
+<!--end video -->
+
+<!--start pagitions -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <nav aria-label="Page navigation example ">
+  <ul class="pagination p mt-3">
+    {% if ServicesData.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="/index/?page={{ServicesData.previous_page_number}}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+      {% endif %}
+    </li>
+    {% for i in totalpagelist %}
+    <li class="page-item"><a class="page-link" href="/index/?page={{i}}">{{i}}</a></li>
+    {% endfor %}
+
+    {% if ServicesData.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="/index/?page={{ServicesData.next_page_number}}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+
+{% block childpage %}
+<head>
+    <link href="{% static 'css/v_c.css' %}" rel="stylesheet" />
+  
+</head>
+
+<div class="containe">
+    <div class="row mx-auto">
+{% for i in p %}
+        <div class="col-lg-3 col-sm-12 col-md-6 co my-4">
+            <div class="card c" style="width: 18rem;">
+                <img src="/media/{{i.photo}}" class="card-img-top" alt="..." >
+
+              </div>
+        </div>
+{% endfor %}
+    </div>
+</div>
+
+<!--start pagitions -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <nav aria-label="Page navigation example ">
+    <ul class="pagination p mt-3">
+      {% if ServicesData.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="/index/?page={{ServicesData.previous_page_number}}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+        {% endif %}
+      </li>
+      {% for i in totalpagelist %}
+      <li class="page-item"><a class="page-link" href="/index/?page={{i}}">{{i}}</a></li>
+      {% endfor %}
+  
+      {% if ServicesData.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="/index/?page={{ServicesData.next_page_number}}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  
+      </div>
+    </div>
+  </div>
+
+{% endblock%}

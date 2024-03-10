@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+
+{% block childpage %}
+<head>
+  
+  <link href="{% static 'css/v_c.css' %}" rel="stylesheet" />
+</head>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 ms-5">
+      {% if a|length < 1 %}
+<p>No search results: </p>
+<p>Your search - <b>{{query}}</b>- did not match any documents.</p>
+Suggestions:
+<ul>
+  <li>Make sure that all words are spelled correctly.</li>
+  <li>Try different keywords.</li>
+  <li>Try more general keywords.</li>
+  <li>Try fewer keywords.</li>
+</ul>
+    {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="containe">
+    <div class="row mx-auto">
+    
+{% for i in a %}
+
+
+<div class="col-lg-3 col-sm-12 col-md-6 co my-4">
+  <div class="card c" style="width: 18rem;">
+    
+      <a href="/x_app/video_play?vpid={{i.id}}">
+      <video width="285" height="240" class="card-img-top">
+        <source src="{{i.v.url}}" type="video/mp4">
+        </video>
+        </a>
+      <div class="card-body cb">
+        <a href="/x_app/video_play?vpid={{i.id}}"><p class="card-text">{{i.titel}}</p></a>
+      </div>
+    </div>  
+</div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock%}
